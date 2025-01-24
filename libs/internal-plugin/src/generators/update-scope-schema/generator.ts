@@ -30,8 +30,7 @@ export async function updateScopeSchemaGenerator(
     defaultProject: 'movies-app'
   }));
 
-  await
-  formatFiles(tree);
+  await formatFiles(tree);
 }
 
 function getScopes(projectMap: Map<string, ProjectConfiguration>) {
