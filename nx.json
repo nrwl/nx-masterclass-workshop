@@ -36,7 +36,7 @@
       "options": { "passWithNoTests": true },
       "configurations": { "ci": { "ci": true, "codeCoverage": true } }
     },
-    "e2e-ci--**/*": { "dependsOn": ["^build"] },
+    "e2e-ci--**/*": { "dependsOn": ["^build"], "parallelism": false },
     "@nx/js:tsc": {
       "cache": true,
       "dependsOn": ["^build"],
@@ -44,7 +44,7 @@
     }
   },
   "plugins": [
-    { "plugin": "@nx/playwright/plugin", "options": { "targetName": "e2e" } },
+    { "plugin": "@nx/playwright/plugin", "options": { "targetName": "e2e-ci" } },
     { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } },
     {
       "plugin": "@nx/webpack/plugin",
