@@ -1,0 +1,1 @@
+nx g @nx-workshop/internal-plugin:update-scope-schema

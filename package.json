@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve"
+    "start": "nx serve",
+    "postinstall": "husky install",
+    "pre-commit": "npx nx g @nx-workshop/internal-plugin:update-scope-schema"
   },
   "private": true,
   "dependencies": {
@@ -67,6 +69,7 @@
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-playwright": "^1.6.2",
+    "husky": "^9.1.7",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "jest-environment-node": "^29.7.0",
