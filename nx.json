@@ -79,6 +79,18 @@
         "testTargetName": "test",
         "typecheckTargetName": "typecheck"
       }
+    },
+    {
+      "plugin": "@nx/js/typescript",
+      "options": {
+        "typecheck": {
+          "targetName": "tsc:typecheck"
+        },
+        "build": {
+          "targetName": "tsc:build",
+          "configName": "tsconfig.lib.json"
+        }
+      }
     }
   ],
   "generators": {
