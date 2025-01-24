@@ -95,5 +95,6 @@
     "@nx/angular:component": {
       "style": "css"
     }
-  }
+  },
+  "defaultProject": "movies-app"
 }
