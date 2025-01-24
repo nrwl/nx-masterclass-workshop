@@ -5,6 +5,6 @@
   "sourceRoot": "apps/movies-app-e2e/src",
   "implicitDependencies": ["movies-app"],
   "// targets": "to see all targets run: nx show project movies-app-e2e --web",
-  "tags": ["type:e2e", "scope:app"],
+  "tags": ["type:e2e", "scope:movies"],
   "targets": {}
 }

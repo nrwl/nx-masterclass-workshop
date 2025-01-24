@@ -18,7 +18,7 @@
       "x-prompt": {
         "message": "In which directory should the files be generated?",
         "type": "list",
-        "items": ["movies", "api", "shared"]
+        "items": ["api", "movies", "video-games", "internal", "shared"]
       }
     }
   },
