@@ -7,6 +7,7 @@ export const routes: Routes = [
       import('@nx-workshop/movies/feature-movie-list').then(
         m => m.MovieListPageComponent
       ),
+    title: 'Movies List',
   },
   {
     path: 'list/genre/:id',
@@ -14,6 +15,7 @@ export const routes: Routes = [
       import('@nx-workshop/movies/feature-movie-list').then(
         m => m.MovieListPageComponent
       ),
+    title: 'Movies Genre'
   },
   {
     path: 'movie/:id',
@@ -21,6 +23,7 @@ export const routes: Routes = [
       import('@nx-workshop/movies/feature-movie-detail').then(
         m => m.MovieDetailPageComponent
       ),
+    title: 'Movie Id'
   },
   {
     path: 'search/:query',
@@ -28,6 +31,7 @@ export const routes: Routes = [
       import('@nx-workshop/movies/feature-movie-search').then(
         m => m.MovieSearchPageComponent
       ),
+    title: 'Search Movie'
   },
   {
     path: 'my-movies',
@@ -35,11 +39,13 @@ export const routes: Routes = [
       import('@nx-workshop/movies/feature-my-movie-list').then(
         m => m.MyMovieListComponent
       ),
+    title: 'My Movies'
   },
   {
     path: '',
     redirectTo: 'list/popular',
     pathMatch: 'full',
+    title: 'Popular Movies'
   },
   {
     path: '**',
@@ -47,5 +53,6 @@ export const routes: Routes = [
       import('@nx-workshop/shared/feature-not-found-page').then(
         m => m.NotFoundPageComponent
       ),
+    title: 'Page Not Found'
   },
 ];
