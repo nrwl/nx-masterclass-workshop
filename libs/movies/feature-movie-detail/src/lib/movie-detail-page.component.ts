@@ -1,17 +1,13 @@
 import { CommonModule, Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FastSvgComponent } from '@push-based/ngx-fast-svg';
 import { MovieService } from '@nx-workshop/movies/data-access-movies';
-import { Observable } from 'rxjs';
-import {
-  TMDBMovieDetailsModel,
-} from '@nx-workshop/shared/models';
+import { map, switchMap } from 'rxjs';
 import { StarRatingComponent } from '@nx-workshop/shared/ui-star-rating';
 import { MovieImagePipe } from '@nx-workshop/shared/utils';
 
 import { DetailGridComponent } from '@nx-workshop/shared/ui';
-import { MovieListComponent } from '@nx-workshop/movies/ui-movie-list';
 
 @Component({
   selector: 'movie-detail-page',
@@ -23,26 +19,20 @@ import { MovieListComponent } from '@nx-workshop/movies/ui-movie-list';
     DetailGridComponent,
     StarRatingComponent,
     FastSvgComponent,
-    MovieListComponent,
     MovieImagePipe,
   ],
 })
-export class MovieDetailPageComponent implements OnInit {
-  movie$!: Observable<TMDBMovieDetailsModel>;
+export class MovieDetailPageComponent {
+  private movieService = inject(MovieService);
+  private activatedRoute = inject(ActivatedRoute);
+  private location = inject(Location);
 
-  constructor(
-    private movieService: MovieService,
-    private activatedRoute: ActivatedRoute,
-    private location: Location
-  ) { }
+  movie$ = this.activatedRoute.params.pipe(
+    map((params) => params['id']),
+    switchMap((id) => this.movieService.getMovieById(id))
+  );
 
   goBack() {
     this.location.back();
-  };
-
-  ngOnInit(): void {
-    this.activatedRoute.params.subscribe(params => {
-      this.movie$ = this.movieService.getMovieById(params['id']);
-    });
   }
 }

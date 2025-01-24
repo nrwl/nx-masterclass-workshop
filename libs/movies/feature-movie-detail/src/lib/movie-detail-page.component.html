@@ -1,35 +1,36 @@
 <div class="movie-detail-wrapper">
-  <ui-detail-grid *ngIf="movie$ | async as movie; else loader">
+  @if (movie$ | async; as movie) {
+  <ui-detail-grid>
     <div detailGridMedia>
       <img
         class="aspectRatio-2-3 fit-cover"
-        [src]="movie.poster_path | movieImage: 780"
+        [src]="movie.poster_path | movieImage : 780"
         [alt]="movie.title"
         width="780px"
-        height="1170px" />
+        height="1170px"
+      />
     </div>
     <div detailGridDescription>
       <header>
         <h1>{{ movie.title }}</h1>
         <h3>
           @if (movie.popular) {
-            <span class="movie-detail--label">Popular</span>
-          }
-          @if (movie.topRated) {
-            <span class="movie-detail--label">Top Rated</span>
-          }
-          @if (movie.upcoming) {
-            <span class="movie-detail--label">Upcoming</span>
+          <span class="movie-detail--label">Popular</span>
+          } @if (movie.topRated) {
+          <span class="movie-detail--label">Top Rated</span>
+          } @if (movie.upcoming) {
+          <span class="movie-detail--label">Upcoming</span>
           }
         </h3>
       </header>
       <section class="movie-detail--basic-infos">
         <ui-star-rating
           [rating]="movie.vote_average"
-          [showRating]="true"></ui-star-rating>
+          [showRating]="true"
+        ></ui-star-rating>
         <div class="movie-detail--languages-runtime-release">
           <strong>
-            {{ movie.release_date | date: 'Y' }}
+            {{ movie.release_date | date : 'Y' }}
           </strong>
         </div>
       </section>
@@ -39,7 +40,8 @@
           <!-- class="movie-detail--genres-link" genre links -->
           <a
             class="movie-detail--genres-link"
-            *ngFor="let genre of movie.genres">
+            *ngFor="let genre of movie.genres"
+          >
             <fast-svg name="genre"></fast-svg>
             {{ genre.name }}
           </a>
@@ -60,7 +62,8 @@
           class="btn"
           target="_blank"
           rel="noopener noreferrer"
-          [href]="'https://www.imdb.com/title/'">
+          [href]="'https://www.imdb.com/title/'"
+        >
           IMDB
           <fast-svg class="btn__icon" name="imdb"></fast-svg>
         </a>
@@ -78,10 +81,7 @@
       </section>
     </div>
   </ui-detail-grid>
-</div>
-<div>
-
-  <ng-template #loader>
-    <div class="loader"></div>
-  </ng-template>
+  } @else {
+  <div class="loader"></div>
+  }
 </div>

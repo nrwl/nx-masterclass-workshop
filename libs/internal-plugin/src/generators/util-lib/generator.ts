@@ -6,6 +6,12 @@ export async function utilLibGenerator(
   tree: Tree,
   options: UtilLibGeneratorSchema
 ) {
+  let libName = options.name;
+
+  if (!libName.startsWith('util-')) {
+    libName = `util-${libName}`;
+  }
+
   const projectRoot = `libs/${options.name}`;
 
   await libraryGenerator(tree, { directory: projectRoot });
