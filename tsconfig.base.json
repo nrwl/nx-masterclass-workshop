@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nx-workshop/internal-plugin": ["libs/internal-plugin/src/index.ts"],
       "@nx-workshop/models": ["libs/shared/models/src/index.ts"],
       "@nx-workshop/movies/data-access-movies": [
         "libs/movies/data-access-movies/src/index.ts"
