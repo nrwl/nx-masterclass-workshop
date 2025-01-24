@@ -12,6 +12,14 @@
         "index": 0
       },
       "x-prompt": "What name would you like to use?"
+    },
+    "directory": {
+      "type": "string",
+      "x-prompt": {
+        "message": "In which directory should the files be generated?",
+        "type": "list",
+        "items": ["movies", "api", "shared"]
+      }
     }
   },
   "required": ["name"]
