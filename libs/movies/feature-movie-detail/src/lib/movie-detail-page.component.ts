@@ -9,7 +9,7 @@ import { MovieImagePipe } from '@nx-workshop/shared/utils';
 
 import { DetailGridComponent } from '@nx-workshop/shared/ui';
 
-// some
+// some thing else
 
 @Component({
   selector: 'movie-detail-page',
