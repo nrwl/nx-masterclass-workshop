@@ -53,7 +53,10 @@
       "@nx-workshop/shared/util-env-token": [
         "libs/shared/util-env-token/src/index.ts"
       ],
-      "@nx-workshop/shared/utils": ["libs/shared/utils/src/index.ts"]
+      "@nx-workshop/shared/utils": ["libs/shared/utils/src/index.ts"],
+      "@nx-workshop/util-notifications": [
+        "libs/api/util-notifications/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

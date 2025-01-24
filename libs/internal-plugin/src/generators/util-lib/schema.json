@@ -12,6 +12,28 @@
         "index": 0
       },
       "x-prompt": "What name would you like to use?"
+    },
+    "directory": {
+      "type": "string",
+      "description": "Directory of the library",
+      "x-prompt": {
+        "message": "What directory should this library be generated in?",
+        "type": "list",
+        "items": [
+          {
+            "value": "movies",
+            "label": "movies"
+          },
+          {
+            "value": "api",
+            "label": "api"
+          },
+          {
+            "value": "shared",
+            "label": "shared"
+          }
+        ]
+      }
     }
   },
   "required": ["name"]

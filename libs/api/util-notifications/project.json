@@ -1,0 +1,19 @@
+{
+  "name": "util-notifications",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api/util-notifications/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/api/util-notifications",
+        "main": "libs/api/util-notifications/src/index.ts",
+        "tsConfig": "libs/api/util-notifications/tsconfig.lib.json",
+        "assets": ["libs/api/util-notifications/*.md"]
+      }
+    }
+  },
+  "tags": ["type:util", "scope:api"]
+}

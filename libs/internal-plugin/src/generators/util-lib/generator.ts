@@ -1,25 +1,13 @@
-import {
-  addProjectConfiguration,
-  formatFiles,
-  generateFiles,
-  Tree,
-} from '@nx/devkit';
-import * as path from 'path';
+import { formatFiles, Tree } from '@nx/devkit';
+import { libraryGenerator } from '@nx/js';
 import { UtilLibGeneratorSchema } from './schema';
 
-export async function utilLibGenerator(
-  tree: Tree,
-  options: UtilLibGeneratorSchema
-) {
-  const projectRoot = `libs/${options.name}`;
-  addProjectConfiguration(tree, options.name, {
-    root: projectRoot,
-    projectType: 'library',
-    sourceRoot: `${projectRoot}/src`,
-    targets: {},
+export default async function (tree: Tree, options: UtilLibGeneratorSchema) {
+  await libraryGenerator(tree, {
+    name: `util-${options.name}`,
+    directory: `libs/${options.directory}/util-${options.name}`,
+    tags: `type:util,scope:${options.directory}`,
   });
-  generateFiles(tree, path.join(__dirname, 'files'), projectRoot, options);
+  // comment the rest of the code
   await formatFiles(tree);
 }
-
-export default utilLibGenerator;
