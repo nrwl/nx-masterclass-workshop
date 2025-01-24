@@ -1,0 +1,14 @@
+{
+  "generators": {
+    "util-lib": {
+      "factory": "./src/generators/util-lib/generator",
+      "schema": "./src/generators/util-lib/schema.json",
+      "description": "util-lib generator"
+    },
+    "update-scope-schema": {
+      "factory": "./src/generators/update-scope-schema/generator",
+      "schema": "./src/generators/update-scope-schema/schema.json",
+      "description": "Update the scope schema"
+    }
+  }
+}
