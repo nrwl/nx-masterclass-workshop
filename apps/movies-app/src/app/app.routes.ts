@@ -32,7 +32,6 @@ export const routes: Routes = [
       import('@nx-workshop/movies/feature-movie-search').then(
         m => m.MovieSearchPageComponent
       ),
-      title: 'Search'
   },
   {
     path: 'my-movies',
