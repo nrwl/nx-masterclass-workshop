@@ -21,13 +21,14 @@ export async function utilLibGenerator(
   //   targets: {},
   // });
   // generateFiles(tree, path.join(__dirname, 'files'), projectRoot, options);
-  // await formatFiles(tree);
 
   await libraryGenerator(tree, {
     name: `util-${options.name}`,
-    directory: `libs/${options.directory}/util-${options.name}`,
-    tags: `${options.tags}`
+    directory: `libs/${options.directory}/${options.directory}-util-${options.name}`,
+    tags: `type:util,scope:${options.directory}`
   });
+
+  await formatFiles(tree);
 }
 
 export default utilLibGenerator;
