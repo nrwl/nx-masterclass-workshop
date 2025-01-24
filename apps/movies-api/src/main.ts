@@ -6,7 +6,7 @@
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app/app.module';
-import { sendNotification } from '../../../libs/api/api-util-notificationss'
+// import { sendNotification } from '../../../libs/api/api-util-notificationss'
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
